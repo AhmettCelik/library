@@ -1,4 +1,6 @@
 const tableBody = document.querySelector("#books_table tbody");
+const newBookBtn = document.getElementById("new_book_btn");
+const newBookDialog = document.getElementById("new_book_popup");
 
 const myLibrary = [];
 
@@ -25,6 +27,7 @@ addBookToLibrary("To Kill a Mockingbird", "Harper Lee", 281, true);
 
 function showBooksOnTable() {
   let tableRows = "";
+  /** @param myLibrary[index] for each book */
   myLibrary.forEach((book) => {
     tableRows += `
     <tr>
@@ -36,5 +39,9 @@ function showBooksOnTable() {
     tableBody.innerHTML = tableRows;
   });
 }
+
+newBookBtn.addEventListener("click", () => {
+  newBookDialog.showModal();
+});
 
 showBooksOnTable();

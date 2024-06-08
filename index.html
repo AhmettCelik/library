@@ -7,7 +7,77 @@
     <title>Library</title>
   </head>
   <body>
+    <header>
+      <h2>Library</h2>
+      <button type="button" id="new_book_btn">New Book</button>
+    </header>
     <main>
+      <!-- ? New Book Pop-Up -->
+      <dialog id="new_book_popup" class="new_book_popup_dialog">
+        <form method="dialog" class="new_book_form">
+          <section class="new_book_popup_header_section">
+            <h2>New Book</h2>
+            <div class="new_book_popup_buttons_container">
+              <button id="bookmark_cancel_btn" class="bookmark_btn">
+                <span class="icon_container">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 384 512"
+                    height="1.2rem"
+                    class="icon"
+                  >
+                    <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                      fill="#ffffff"
+                      d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                    />
+                  </svg>
+                </span>
+                <p class="text">Cancel</p>
+              </button>
+              <button id="bookmark_save_btn" class="bookmark_btn">
+                <span class="icon_container">
+                  <svg viewBox="0 0 384 512" height="0.9em" class="icon">
+                    <path
+                      d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"
+                    ></path>
+                  </svg>
+                </span>
+                <p class="text">Save</p>
+              </button>
+            </div>
+          </section>
+          <menu class="form_container">
+            <div class="form_inputs_container">
+              <div class="new_book_input_container">
+                <input
+                  type="text"
+                  id="new_book_title_input"
+                  class="new_book_input"
+                  required=""
+                />
+                <label for="new_book_title_input" class="new_book_title_label"
+                  >Book Title</label
+                >
+                <div class="underline"></div>
+              </div>
+              <div class="new_book_input_container">
+                <input
+                  type="text"
+                  id="new_book_title_input"
+                  class="new_book_input"
+                  required=""
+                />
+                <label for="new_book_title_input" class="new_book_title_label"
+                  >Book Author</label
+                >
+                <div class="underline"></div>
+              </div>
+            </div>
+          </menu>
+        </form>
+      </dialog>
+      <!-- ? New Book Pop-Up -->
       <table id="books_table">
         <thead>
           <tr>
