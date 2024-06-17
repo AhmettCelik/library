@@ -1,6 +1,13 @@
 const tableBody = document.querySelector("#books_table tbody");
 const newBookBtn = document.getElementById("new_book_btn");
 const newBookDialog = document.getElementById("new_book_popup");
+const form = document.getElementById("new_book_form");
+const newBookCancelButton = document.getElementById("bookmark_cancel_btn");
+const newBookSaveButton = document.getElementById("bookmark_save_btn");
+const titleInput = document.getElementById("new_book_title_input");
+const authorInput = document.getElementById("new_book_author_input");
+const pagesInput = document.getElementById("new_book_pages_input");
+const readInput = document.getElementById("new_book_read_input");
 
 const myLibrary = [];
 
@@ -42,6 +49,31 @@ function showBooksOnTable() {
 
 newBookBtn.addEventListener("click", () => {
   newBookDialog.showModal();
+});
+
+newBookCancelButton.addEventListener("click", () => {
+  newBookDialog.close();
+});
+
+newBookSaveButton.addEventListener("click", (event) => {
+  if (
+    titleInput.value === "" ||
+    authorInput.value === "" ||
+    pagesInput.value === ""
+  ) {
+    alert("Please fill imformations.");
+    return;
+  }
+
+  addBookToLibrary(
+    titleInput.value,
+    authorInput.value,
+    pagesInput.value,
+    readInput.checked
+  );
+
+  showBooksOnTable();
+  newBookDialog.close();
 });
 
 showBooksOnTable();
