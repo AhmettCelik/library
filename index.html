@@ -83,13 +83,17 @@
                 <div class="underline"></div>
               </div>
             </div>
-            <div class="">
-              <input type="number" id="new_book_pages_input" required="" />
-              <label for="new_book_pages_input">Pages</label>
-            </div>
-            <div class="">
-              <input type="checkbox" id="new_book_read_input" required="" />
-              <label for="new_book_read_input">Have u read?</label>
+            <div style="display: flex; gap: 40px">
+              <div class="new_book_pages_input_container">
+                <label for="new_book_pages_input" id="new_book_pages_label"
+                  >Pages</label
+                >
+                <input type="number" id="new_book_pages_input" required="" />
+              </div>
+              <div class="">
+                <input type="checkbox" id="new_book_read_input" required="" />
+                <label for="new_book_read_input">Have u read?</label>
+              </div>
             </div>
           </menu>
         </form>
